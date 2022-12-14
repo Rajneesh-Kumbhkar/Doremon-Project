@@ -1,0 +1,308 @@
+@mixin lines( $top, $left, $rotate) {
+    position: absolute;
+        top: $top;
+        left: $left;
+        height: 60px;
+        width: 1.5px;
+        transform: rotate($rotate);
+        background: black;
+        border-radius: 20px;
+}
+
+@mixin hand($top, $left, $rotate) {
+    position: absolute;
+        top: $top;
+        left: $left;
+        height: 50px;
+        width: 120px;
+        border-radius: 50px;
+        box-shadow: 0 0 10px black inset;
+        transform: rotate($rotate);
+        background: skyblue;
+}
+@mixin hand-palm($top, $left) { 
+    position: relative;
+            top: $top;
+            left: $left;
+            height: 60px;
+            width: 60px;
+            border: 2px solid black;
+            border-radius: 50%;
+            background: white;
+            box-shadow: 0 0 5px black inset;
+        }
+@mixin leg($top, $left) {
+    position: absolute;
+        left: $top;
+        top: $left;
+        height: 63px;
+        width: 109px;
+        background: white;
+        border-radius: 100% 76% 74% 90% / 99% 100% 73% 78% ;
+        box-shadow: 0 0 3px black inset;
+        border: 2px solid black;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+   height: 100vh;
+   width: 100%; 
+   background: #0c192c;
+}
+
+.container{
+    position: absolute;
+    top: 38%;
+    left: 20%;
+    height: 600px;
+    width: 600px;
+    .face{
+        position: relative;
+        top: 5%;
+        left: 30%;
+        width: 250px;
+        height: 220px;
+        border-radius: 50%;
+        border: 2px solid black;
+        background: skyblue;
+        box-shadow: 0 0 10px black inset;
+        z-index: 100;
+        .face-circle{
+            position: relative;
+            top: 13%;
+            left: 5%;
+            height: 190px;
+            width: 220px;
+            border: 1px solid black;
+            border-radius: 50%;
+            background: white;
+        }
+        .left-eye{
+            position: absolute;
+            top: 10%;
+            left: 33%;
+            height: 50px;
+            width: 40px;
+            background: white;
+            border-radius: 50%;
+            border: 1px solid;
+            overflow: hidden;
+            .ball{
+                position: relative;
+                top: 40%;
+                left: 60%;
+                height: 15px;
+                width: 10px;
+                border: 4px solid black;
+                border-radius: 50%;
+                background-color: rgb(255, 255, 255);
+            }
+        }
+        .right-eye{
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            height: 50px;
+            width: 40px;
+            background: white;
+            border-radius: 50%;
+            border: 1px solid;
+            overflow: hidden;
+            .ball{
+                position: relative;
+                top: 40%;
+                left: 15%;
+                height: 15px;
+                width: 10px;
+                border: 4px solid black;
+                border-radius: 50%;
+                background-color: rgb(255, 255, 255);
+           
+            }
+        }
+    }
+    .nose{
+        position: absolute;
+        top: 28%;
+        left: 44%;
+        height: 30px;
+        width: 30px;
+        border: 1px solid black;
+        border-radius: 50%;
+        background: rgb(169, 4, 4);
+        &::before{ 
+            content: "";
+            position: absolute;
+            top: 20%;
+            left: 10%;
+            height: 15px;
+            width: 15px;
+            filter: blur(6px);
+            border-radius: 50%;
+            background: white;
+        }
+    }
+    .nose-line{
+        position: absolute;
+        top: 42%;
+        left: 50%;
+        height: 35px;
+        width: 1px;
+        background: black;
+        border: 2px;
+       
+    }
+    .mustached{
+
+    .line1::before{
+        content: "";
+        @include lines(25%, 30%,105deg )
+    }
+    .line2::before{
+        content: "";
+        @include lines(33%,30% ,90deg )
+    }
+    .line3::before{
+        content: "";
+        @include lines(42%, 30%,70deg )
+    }
+    .line1::after{
+        content: " ";
+        @include lines(25%, 70%,70deg )
+    }
+    .line2::after{
+        content: "";
+        @include lines(33%,70% ,90deg )
+    }
+    .line3::after{
+        content: " ";
+        @include lines(42%, 70%,105deg )
+    }
+}
+    .mouth{
+        position: absolute;
+        top: 58%;
+        left: 25%;
+        height: 70px;
+        width: 130px;
+        border-radius: 42% 21% 49% 53% / 11% 10% 92% 89% ;
+        background: rgb(81, 2, 2);
+        overflow: hidden;
+        .toungh{
+            position: relative;
+            top: 55%;
+            left: 28%;
+            height: 60px;
+            width: 60px;
+            background: rgb(95, 3, 3);
+            transform: rotate(45deg);
+            
+            &::before{
+                content: " ";
+                position: absolute;
+                height: 60px;
+                width: 60px;
+                background: #d21111;
+                border-radius: 50%;
+                right: 50%;
+                }
+                &::after{
+                    content: " ";
+                    position: absolute;
+                    height: 60px;
+                    width: 60px;
+                    border-radius: 50%;
+                    background: #d21111;
+                    top: -50%;
+                    }
+        }
+    }
+    .neck-band{
+        position: absolute;
+        top: 38%;
+        left: 37%;
+        height: 20px;
+        width: 170px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px black inset;
+        background: red;
+        z-index: 100;
+    }
+    .neck-less{
+        position: absolute;
+        left: 40%;
+        height: 45px;
+        width: 40px;
+        border-radius: 50%;
+        background: rgb(182, 191, 22);
+        z-index: 200;
+    }
+    .body{
+        position: relative;
+        top: 2%;
+        left: 34%;
+        height: 180px;
+        width: 200px;
+        border: 1px solid black;
+        box-shadow: 0 0 10px black inset;
+        border-radius: 50px 50px 10px 10px;
+        background: skyblue;
+        
+        .stomach{
+            position: relative;
+            top: -10px;
+            left: 15%;
+            border-radius: 42% 49% 66% 67% / 73% 52% 100% 74% ;
+            height: 160px;
+            width: 150px;
+            background: white;
+            .pocket{
+                position: relative;
+                top: 50%;
+                left: 20%;
+                height: 50px;
+                width: 100px;
+                border: 2px solid black;
+                border-radius: 72% 49% 55% 67% / 16% 17% 100% 100% ;
+            }
+        }
+        span{
+            position: absolute;
+            top: 89%;
+            left: 45%;
+            height: 20px;
+            width: 19px;
+            box-shadow: -5px -5px 10px black;
+            border: 1px solid black;
+            border-bottom: none;
+            border-radius: 87% 52% 0% 40% / 100% 100% 0% 0% ;
+            background: #0c192c;
+        }
+    }
+    .left-hand{
+        @include hand(45%,23% ,140deg );
+        .left-palm{
+            @include hand-palm(-10%,76% );
+        }
+    }
+    .right-hand{
+        @include hand(38%,61%,150deg );
+        .right-palm{
+            @include hand-palm(-10%,0% )
+        }
+        
+    }
+    .left-leg{
+        @include leg(31.5%, 65% )
+    }
+    .right-leg{
+        @include leg(51.5%,65% );
+        transform: rotatey(180deg);
+        
+    }
+}

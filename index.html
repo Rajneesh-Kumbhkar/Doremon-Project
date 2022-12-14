@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/bubbles.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Doremon</title>
+  </head>
+  <script>
+    let play = document.getElementById("music");
+    let music = new Audio("doremon.mp3");
+    function song() {
+      music.play();
+    }
+    function pause() {
+      music.pause();
+    }
+  </script>
+  <body ondblclick="pause()" onclick="song()">
+    <div class="bubble-container">
+      <div class="bubbles">
+        <span style="--i: 14"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 9"></span>
+        <span style="--i: 21"></span>
+        <span style="--i: 12"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 20"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 23"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 4"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 13"></span>
+        <span style="--i: 25"></span>
+        <span style="--i: 11"></span>
+        <span style="--i: 22"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 24"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 23"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 4"></span>
+        <span style="--i: 18"></span>
+        <span style="--i: 24"></span>
+        <span style="--i: 14"></span>
+        <span style="--i: 23"></span>
+        <span style="--i: 8"></span>
+        <span style="--i: 10"></span>
+        <span style="--i: 4"></span>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="face" id="music">
+        <div class="face-circle"></div>
+        <div class="left-eye">
+          <div class="ball"></div>
+        </div>
+        <div class="right-eye">
+          <div class="ball"></div>
+        </div>
+        <div class="nose"></div>
+        <div class="nose-line"></div>
+        <div class="mustached">
+          <span class="line1"> </span>
+          <span class="line2"></span>
+          <span class="line3"></span>
+        </div>
+        <div class="mouth">
+          <div class="toungh"></div>
+        </div>
+      </div>
+      <div class="neck-band">
+        <div class="neck-less"></div>
+      </div>
+      <div class="left-hand">
+        <div class="left-palm"></div>
+      </div>
+      <div class="right-hand">
+        <div class="right-palm"></div>
+      </div>
+      <div class="left-leg"></div>
+      <div class="right-leg"></div>
+      <div class="body">
+        <div class="stomach">
+          <div class="pocket"></div>
+        </div>
+        <span></span>
+      </div>
+    </div>
+    <script>
+      // var balls = document.getElementsByClassName("ball");
+      // document.onmousemove = function () {
+      //   var x = (event.clientX * 180) / window.innerWidth + "%";
+      //   var y = (event.clientY * 180) / window.innerHeight + "%";
+      //   for (var i = 0; i < 2; i++) {
+      //     balls[i].style.left = x;
+      //     balls[i].style.top = y;
+      //     balls[i].style.transform =
+      //       "translate(-" + 40 * x + "," + 20 * y + ")";
+      //   }
+      // };
+      var dore = document.getElementsByClassName("container");
+      document.onmousemove = function () {
+        var x = (event.clientX * 180) / window.innerWidth + "%";
+        var y = (event.clientY * 180) / window.innerHeight + "%";
+        for (var i = 0; i < 2; i++) {
+          dore[i].style.left = x;
+          dore[i].style.top = y;
+          dore[i].style.transform = "translate(-" + 40 * x + "," + 20 * y + ")";
+        }
+      };
+    </script>
+  </body>
+</html>
